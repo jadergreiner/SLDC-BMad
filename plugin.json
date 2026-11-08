@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "sdlc-bmad",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Orquestração SDLC BMad com catálogo de adaptadores oficiais, especialistas customizados por skill, deliberação e gates humanos; sem runtime executor embutido.",
   "author": {
     "name": "Plugin owner"
@@ -12,7 +12,8 @@
     "software-engineering",
     "architecture",
     "governance",
-    "agents"
+    "agents",
+    "version-management"
   ],
   "extensions": {
     "com.openai": {
