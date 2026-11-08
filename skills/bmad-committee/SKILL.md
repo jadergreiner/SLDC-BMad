@@ -20,3 +20,6 @@ Título, projeto, assunto, agentes (papel e competência), evidências e fontes,
 
 ## Impedimento
 Não afirmar reunião real de agentes independentes quando a ferramenta não foi chamada. Escrever 'revisão por perspectivas especializadas simuladas' se essas perspectivas tiverem sido produzidas por uma única execução. Sempre validar riscos que dependam de informação externa recente.
+
+## Catálogo v0.2.0 e despacho
+Para parecer específico, selecionar individualmente skills `specialist-data-architect`, `specialist-cloud-architect`, `specialist-security-engineer`, `specialist-qa-test-architect`, `specialist-sre-devops` e/ou `specialist-business-risk-analyst`. Para papeis BMad oficiais, usar os seis adaptadores `bmad-*-adapter`, jamais assumir que esses arquivos são o runtime oficial. Consultar `references/agent-catalog.md` e `references/agent-output-contract.md`. Identificar explicitamente modo real verificado ou perspectivas simuladas. Preservar R0, R1, R2, dissenso e bloqueios críticos.

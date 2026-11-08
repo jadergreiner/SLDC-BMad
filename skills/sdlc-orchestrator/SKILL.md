@@ -36,3 +36,6 @@ Em cada trabalho registrar: projeto, etapa, classificacão de risco e justificat
 
 ## Limite de capacidade
 Este pacote é skills-only; não contém MCP server, banco transacional, policy enforcement real ou CI. Não afirmar atomicidade, exactly-once, segurança certificada, sincronização persistida ou execução automaticamente supervisionada. Exigir ferramentas reais, permissões e evidências para toda mudança externa.
+
+## Dispatch de agentes v0.2.0
+Ver `references/agent-catalog.md` para os 6 adaptadores oficiais (não são skills oficiais) e as 6 skills de especialistas customizados. Consultar `references/agent-output-contract.md` para saída estruturada. Validar presença real do runtime BMad e usar `mode=advisory_simulated` se ausente. Nunca declarar execução de subagentes independentes apenas com skill textual.
