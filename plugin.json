@@ -1,27 +1,10 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "sdlc-bmad",
+  "version": "0.2.0",
+  "description": "Orquestração SDLC BMad com catálogo de adaptadores oficiais, especialistas customizados por skill, deliberação e gates humanos; sem runtime executor embutido.",
   "author": {
     "name": "Plugin owner"
-  },
-  "description": "SDLC completo com BMad oficial como referência, comitê técnico deliberativo, workflows adaptativos, gates humanos e rastreabilidade. A execução protegida depende de infraestrutura adicional.",
-  "extensions": {
-    "com.openai": {
-      "interface": {
-        "capabilities": [
-          "Interactive"
-        ],
-        "category": "Productivity",
-        "defaultPrompt": [
-          "Inicie um projeto SDLC com BMad e classifique os riscos.",
-          "Convoque o comitê multiagente para contestar este ADR.",
-          "Revise o gate de qualidade e as evidências desta entrega."
-        ],
-        "developerName": "Jader Greiner",
-        "displayName": "SDLC + BMad",
-        "longDescription": "Planeje, revise e governe o ciclo de desenvolvimento completo: agentes BMad e especialistas, debates até consenso ou escalação, arquitetura, PRD, ADR, entrega e evidências. Aprovação é obrigatória para qualquer alteração externa. A versão inicial é baseada em skills, sem motor MCP transacional próprio.",
-        "shortDescription": "SDLC com BMad e comitês"
-      }
-    }
   },
   "keywords": [
     "sdlc",
@@ -31,6 +14,23 @@
     "governance",
     "agents"
   ],
-  "name": "sdlc-bmad",
-  "version": "0.1.0"
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "SDLC + BMad",
+        "shortDescription": "SDLC com BMad e comitês",
+        "longDescription": "Planeje, revise e governe o ciclo de desenvolvimento completo: agentes BMad e especialistas, debates até consenso ou escalação, arquitetura, PRD, ADR, entrega e evidências. Aprovação é obrigatória para qualquer alteração externa. A versão inicial é baseada em skills, sem motor MCP transacional próprio.",
+        "developerName": "Plugin owner",
+        "category": "Productivity",
+        "capabilities": [
+          "Interactive"
+        ],
+        "defaultPrompt": [
+          "Inicie um projeto SDLC com BMad e classifique os riscos.",
+          "Convoque o comitê multiagente para contestar este ADR.",
+          "Revise o gate de qualidade e as evidências desta entrega."
+        ]
+      }
+    }
+  }
 }
