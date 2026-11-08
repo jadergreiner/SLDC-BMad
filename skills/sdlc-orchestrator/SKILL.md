@@ -39,3 +39,6 @@ Este pacote é skills-only; não contém MCP server, banco transacional, policy 
 
 ## Dispatch de agentes v0.2.0
 Ver `references/agent-catalog.md` para os 6 adaptadores oficiais (não são skills oficiais) e as 6 skills de especialistas customizados. Consultar `references/agent-output-contract.md` para saída estruturada. Validar presença real do runtime BMad e usar `mode=advisory_simulated` se ausente. Nunca declarar execução de subagentes independentes apenas com skill textual.
+
+## Gestão de versões
+Sempre que o usuário pedir verificação de updates ou quando preparar upgrade do BMad/SDLC, delegar a `sdlc-version-advisor` e exigir proposta com evidências e aprovação humana antes de qualquer alteração; não realizar atualização automática.

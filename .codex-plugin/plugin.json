@@ -1,0 +1,33 @@
+{
+  "interface": {
+    "displayName": "SDLC + BMad",
+    "shortDescription": "SDLC com BMad e comit\u00eas",
+    "longDescription": "Planeje, revise e governe o ciclo de desenvolvimento completo: agentes BMad e especialistas, debates at\u00e9 consenso ou escala\u00e7\u00e3o, arquitetura, PRD, ADR, entrega e evid\u00eancias. Aprova\u00e7\u00e3o \u00e9 obrigat\u00f3ria para qualquer altera\u00e7\u00e3o externa. A vers\u00e3o inicial \u00e9 baseada em skills, sem motor MCP transacional pr\u00f3prio.",
+    "developerName": "Plugin owner",
+    "category": "Productivity",
+    "capabilities": [
+      "Interactive"
+    ],
+    "defaultPrompt": [
+      "Inicie um projeto SDLC com BMad e classifique os riscos.",
+      "Convoque o comit\u00ea multiagente para contestar este ADR.",
+      "Revise o gate de qualidade e as evid\u00eancias desta entrega."
+    ]
+  },
+  "name": "sdlc-bmad",
+  "version": "0.3.0",
+  "description": "Orquestra\u00e7\u00e3o SDLC BMad com cat\u00e1logo de adaptadores oficiais, especialistas customizados por skill, delibera\u00e7\u00e3o e gates humanos; sem runtime executor embutido.",
+  "author": {
+    "name": "Plugin owner"
+  },
+  "keywords": [
+    "sdlc",
+    "bmad",
+    "software-engineering",
+    "architecture",
+    "governance",
+    "agents",
+    "version-management"
+  ],
+  "skills": "./skills"
+}
