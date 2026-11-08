@@ -164,3 +164,48 @@ Atualmente este pacote é **skills-only**. Não há banco transacional, PEP exec
 - [BMad — Código-fonte](https://github.com/bmad-code-org/BMAD-METHOD)
 - [OpenAI Codex — Documentação](https://developers.openai.com/codex/)
 - [Skills em repositórios OpenAI](https://developers.openai.com/blog/skills-agents-sdk/)
+
+
+## Verificação inteligente de versões e propostas de upgrade (v0.3.0)
+
+A skill **`sdlc-version-advisor`** verifica sob demanda a versão local do plugin e a versão estável disponível nos repositórios de origem. Ela **não instala nem atualiza automaticamente**.
+
+- **SDLC:** lê o `plugin.json` instalado e compara com `jadergreiner/SLDC-BMad` (branch `main`, por padrão).
+- **BMad oficial:** consulta o último release estável em `bmad-code-org/BMAD-METHOD`, excluindo prévias e drafts. A versão realmente instalada do BMad precisa ser informada ou comprovada; nunca presumida.
+- **Decisão:** compara SemVer, classifica major/minor/patch, informa evidências e riscos, consulta changelog, propõe testes de regressão e solicita aprovação humana antes de mudanças.
+- **Falha de rede ou versão não identificada:** retorna `unknown`, sem confundir falta de dados com versão atualizada.
+
+**Exemplo — modo leitura, sem escrita:**
+
+```bash
+python skills/sdlc-version-advisor/scripts/check_versions.py --manifest plugin.json --output json
+```
+
+**Quando a versão do BMad instalado tiver sido comprovada:**
+
+```bash
+python skills/sdlc-version-advisor/scripts/check_versions.py --manifest plugin.json --bmad-version 6.12.4 --output text
+```
+
+O valor `6.12.4` acima é **um exemplo histórico**, não uma afirmação sobre sua instalação. Para validar uma branch candidata ainda não integrada ao `main`, use `--sdlc-ref feature/version-advisor-v0.3.0`.
+
+**Testes locais (Python 3, sem dependências externas):**
+
+```bash
+python -m unittest discover -s skills/sdlc-version-advisor/tests -v
+```
+
+**Prompt para Codex, VS Code ou outro agente com acesso às fontes:**
+
+```text
+Use a skill sdlc-version-advisor para conferir as versões realmente instaladas
+neste workspace, comparando SDLC + BMad com os repositórios oficiais.
+Consulte apenas releases estáveis, informe fontes, timestamp, SHA/tag,
+versões atual/remota, alteração major/minor/patch e riscos de compatibilidade.
+Se a consulta falhar ou a versão local não for verificável, marque UNKNOWN.
+Mostre changelog, testes de regressão, plano de rollback e proposta de upgrade.
+Não execute instalação, atualização, commit, merge, deploy ou alteração externa
+sem minha aprovação explícita e específica.
+```
+
+O comando de verificação necessita acesso à API pública do GitHub. Em ambientes sem rede, execute os testes locais e reporte a consulta externa como não verificada. A skill não monitora versões continuamente em segundo plano. Ver [política de versionamento](references/version-policy.md).
